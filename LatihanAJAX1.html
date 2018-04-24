@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title> Latihan AJAX.html </title>
+<head>
+<script> function loadXMLDoc(){
+			var xmlhttp;
+				if (window.XMLHttpRequest){ //code untuk IE7+, frefox,Chrome, Opera
+			xmlhttp=new XMLHttpRequest();
+			}else { //code untuk IE6, IE5
+					xmlhttp=new ActiveXObject("Microsoft.HMLHTTP");
+				  }
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						document.getElementById("isi").innerHTML=xmlhttp.responseText;
+					}
+					}
+			xmlhttp.open("GET","text1.xml",true);
+			xmlhttp.send();
+}
+		 function loadXMLDocs(){
+			var xmlhttp;
+				if (window.XMLHttpRequest){ //code untuk IE7+, frefox,Chrome, Opera
+			xmlhttp=new XMLHttpRequest();
+			}else { //code untuk IE6, IE5
+					xmlhttp=new ActiveXObject("Microsoft.HMLHTTP");
+				  }
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						document.getElementById("fill").innerHTML=xmlhttp.responseText;
+					}
+					}
+			xmlhttp.open("GET","dataku.xml",true);
+			xmlhttp.send();
+}
+</script>
+</head>
+<body>
+	<div id="isi">
+		<h2>Kalimat Utama Sebelum Di Rubah</h2>
+	</div>
+	<button type="button" onclick="loadXMLDoc()">Ubah Tulisan Diatas</button>
+	
+	<div id="fill">
+		<h2>Kalimat Kedua Sebelum Di Rubah</h2>
+	</div>
+	<button type="button" onclick="loadXMLDocs()">Ubah Tulisan Diatas</button>
+</body>
+</html>
